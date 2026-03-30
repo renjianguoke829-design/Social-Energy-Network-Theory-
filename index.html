@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社会能量网络理论 | Social Energy Network Theory</title>
+<meta name="description" content="社会能量网络理论（SENT）— Social Energy Network Theory. A historical philosophy framework grounded in physical constraints.">
+<link rel="stylesheet" href="style.css">
+<style>
+body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+.landing {
+  text-align: center;
+  padding: 60px 40px;
+  max-width: 560px;
+}
+.landing h1 { font-size: 2.4rem; margin-bottom: 0.3rem; }
+.landing h1 span { display: block; font-size: 1.1rem; font-weight: 400; color: var(--text-muted); margin-top: 0.3rem; font-family: var(--font-ui); }
+.landing .desc {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 1.5rem 0 2.5rem;
+}
+.lang-choices { display: flex; gap: 16px; justify-content: center; }
+.lang-choice {
+  display: block;
+  padding: 14px 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--text);
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  font-size: 15px;
+}
+.lang-choice:hover, .lang-choice.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.meta {
+  margin-top: 2.5rem;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 2;
+}
+.tag {
+  display: inline-block;
+  background: var(--sidebar-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  margin: 2px;
+  color: var(--text-muted);
+}
+.theme-corner {
+  position: fixed;
+  top: 20px; right: 20px;
+}
+</style>
+</head>
+<body>
+<button class="theme-btn theme-corner" id="themeBtn" onclick="toggleTheme()">🌙</button>
+
+<div class="landing">
+  <h1>社会能量网络理论
+    <span>Social Energy Network Theory</span>
+  </h1>
+
+  <div class="desc">
+    以物理约束为硬边界的历史哲学框架<br>
+    A historical philosophy framework grounded in physical constraints<br>
+    <br>
+    v5.14+ · 第五版整理稿 · 5th Edition Synthesis
+  </div>
+
+  <div class="lang-choices">
+    <a class="lang-choice primary" href="zh.html">阅读中文版</a>
+    <a class="lang-choice" href="en.html">Read in English</a>
+  </div>
+
+  <div class="meta">
+    <div>
+      <span class="tag">热力学约束</span>
+      <span class="tag">网络拓扑</span>
+      <span class="tag">韵理论</span>
+      <span class="tag">社会黑洞</span>
+      <span class="tag">消费者文明</span>
+    </div>
+    <div style="margin-top:12px">
+      Thermodynamics · Network Theory · Yun (韵) · Social Black Holes · Consumer Civilization
+    </div>
+  </div>
+</div>
+
+<script>
+const html = document.documentElement;
+const THEME_KEY = 'sent-theme';
+function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY) || 'light';
+  html.setAttribute('data-theme', saved);
+  document.getElementById('themeBtn').textContent = saved === 'dark' ? '☀️' : '🌙';
+}
+function toggleTheme() {
+  const cur = html.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem(THEME_KEY, next);
+  document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️' : '🌙';
+}
+initTheme();
+</script>
+</body>
+</html>
